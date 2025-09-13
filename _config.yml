@@ -123,7 +123,7 @@ comments:
     repo_id: R_kgDOPvNivw
     category: Comments
     category_id: DIC_kwDOPvNiv84CvZrJ
-    # mapping: # optional, default to 'pathname'
+    mapping: pathname
     # strict: # optional, default to '0'
     # input_position: # optional, default to 'bottom'
     # lang: # optional, default to the value of `site.lang`

@@ -156,4 +156,4 @@ The key to a successful external USB installation is ensuring the bootloader can
 
 Remember to test your USB installation on multiple machines to ensure compatibility and consider keeping a backup configuration in case of drive failure or corruption.
 
-Have questions or comments?  Sign in with GitHub to comment below!
+**Questions or comments?**  Sign in with GitHub to comment below!
