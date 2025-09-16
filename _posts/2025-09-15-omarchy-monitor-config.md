@@ -115,7 +115,7 @@ Replace `YOUR_USERNAME` with your actual username.
 
 ### 4. Restart Hyprland
 
-Hyprland should automatically restart when it detects a change to the configuration; otherwise, you can restart Hyprland by selecting "Relaunch" from the Omarchy "System" menu
+Hyprland should automatically restart when it detects a change to the configuration; otherwise, you can restart Hyprland by selecting "Relaunch" from the Omarchy "System" menu.
 
 ## Troubleshooting Additional Issues
 
