@@ -101,21 +101,22 @@ sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword m
 ```
 {: .nolineno }
 
-Don't forget to make your bash script executable with `sudo chmod +x ~/.local/bin/monitor-toggle.sh`.
+Don't forget to make your bash script executable with `sudo chmod +x ~/.local/bin/monitor-config.sh`.
 
 ### 3. Update Hyprland configuration
 
-Add the following to your Hyprland configuration at `~/.config/hypr/autostart.conf`:
+Add the following lines to your Hyprland configuration at `~/.config/hypr/autostart.conf`:
 
 ```conf
-exec-once = /usr/bin/hyprland-monitor-attached /home/YOUR_USERNAME/.local/bin/monitor-toggle.sh
+exec-once = bash /home/YOUR_USERNAME/.local/bin/monitor-config.sh # configure monitors on launch
+exec-once = hyprland-monitor-attached /home/YOUR_USERNAME/.local/bin/monitor-config.sh # configure monitors when monitors change
 ```
 
 Replace `YOUR_USERNAME` with your actual username.
 
 ### 4. Restart Hyprland
 
-Hyprland should automatically restart when it detects a change to the configuration; otherwise, you can restart Hyprland by selecting "Relaunch" from the Omarchy "System" menu.
+Hyprland should automatically restart when it detects a change to the configuration; otherwise, you can restart your session by selecting "Relaunch" from the Omarchy "System" menu.
 
 ## Troubleshooting Additional Issues
 
