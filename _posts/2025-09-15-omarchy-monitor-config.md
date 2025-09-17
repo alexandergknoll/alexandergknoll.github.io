@@ -11,7 +11,7 @@ After installing [Omarchy](https://omarchy.org/) as my OS which comes with the t
 
 ## Configuring monitors in Omarchy
 
-Hyprland offers a CLI-only approach to configuring monitors.  It does make an attempt to automatically configure new monitors when connected with somewhat sensible defaults, but any further changes need to be made by editing the configuration located at `~/.config/hypr/monitors.conf`. This us what `monitors.conf` looks like after you install Omarchy:
+Hyprland offers a CLI-only approach to configuring monitors.  It does make an attempt to automatically configure new monitors when connected with somewhat sensible defaults, but any further changes need to be made by editing the configuration located at `~/.config/hypr/monitors.conf`. This is what `monitors.conf` looks like after you install Omarchy:
 
 ```conf
 # See https://wiki.hyprland.org/Configuring/Monitors/
