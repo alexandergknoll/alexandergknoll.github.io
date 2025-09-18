@@ -13,7 +13,7 @@ This post describes the problem in more detail and provides step-by-step instruc
 
 ## The Problem: Failed Root Mount on Boot
 
-After successfully installing Omarchy to an external USB device, I encountered the following error during boot:
+After successfully installing Omarchy 2.0 to an external USB device, I encountered the following error during boot:
 
 ```terminal
 ERROR: Failed to mount ' ' on real root.
