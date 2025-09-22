@@ -1,7 +1,7 @@
 ---
 title: Updating Omarchy monitor configuration on connect/disconnect
 date: 2025-09-15 17:29:00
-categories: [Omarchy, Linux]
+categories: [Linux, Omarchy]
 tags: [omarchy, arch-linux, monitor, hyprland]
 ---
 
