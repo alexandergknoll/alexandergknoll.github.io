@@ -143,4 +143,4 @@ If the system doesn't prompt for the encryption password:
 
 This was a minor stumbling block when setting up Omarchy for the first time; once I was able to fix the bootloader I was able to get up and running with Omarchy with no issues on my [Framework 13](https://frame.work/) laptop.
 
-**Questions or comments?**  Sign in with GitHub to comment below!
+**Questions or comments?** Sign in with GitHub to comment below!

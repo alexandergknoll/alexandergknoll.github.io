@@ -128,4 +128,4 @@ Hyprland should automatically restart when it detects a change to the configurat
 
 This should properly configure monitors on boot as well as when monitors are attached/removed.  You can tweak this bash script for many other use cases as well, but hopefully this helps for anyone looking to have a similar setup.
 
-**Questions or comments?**  Sign in with GitHub to comment below!
+**Questions or comments?** Sign in with GitHub to comment below!
