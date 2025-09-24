@@ -7,11 +7,11 @@ tags: [omarchy, arch-linux, monitor, hyprland]
 
 ## Introduction
 
-After installing [Omarchy](https://omarchy.org/) as my OS which comes with the tiling window manager [Hyprland](https://hypr.land/), I realized that having a multi-monitor setup compounds the learning curve when working with a completely new UI with new keybindings.  To solve this, I wanted to configure my setup to automatically disable my internal [Framework 13](https://frame.work/) laptop display whenever an external display was connected (and re-enable it when it was disconnected). 
+After installing [Omarchy](https://omarchy.org/) as my OS which comes with the tiling window manager [Hyprland](https://hypr.land/), I realized that having a multi-monitor setup compounds the learning curve when working with a completely new UI with new keybindings.  To solve this, I wanted to configure my setup to automatically disable my internal [Framework 13](https://frame.work/) laptop display whenever an external display was connected (and re-enable it when it was disconnected).
 
 ## Configuring monitors in Omarchy
 
-Hyprland offers a CLI-only approach to configuring monitors.  It does make an attempt to automatically configure new monitors when connected with somewhat sensible defaults, but any further changes need to be made by editing the configuration located at `~/.config/hypr/monitors.conf`. This is what `monitors.conf` looks like after you install Omarchy:
+Hyprland offers a CLI-only approach to configuring monitors.  It does make an attempt to automatically configure new monitors when connected with somewhat sensible defaults, but any further changes need to be made by editing the configuration located at `~/.config/hypr/monitors.conf`.  This is what `monitors.conf` looks like after you install Omarchy:
 
 ```conf
 # See https://wiki.hyprland.org/Configuring/Monitors/
@@ -40,7 +40,7 @@ For a static workstation that always has the same setup, setting your configurat
 
 To solve this, I used the wonderful [hyprland-monitor-attached](https://github.com/coffebar/hyprland-monitor-attached) Hyprland plugin that listens for `monitoradded` and `monitorremoved` events to execute bash script.
 
-## Step-by-Step Solution
+## Step-by-step solution
 
 ### 1. Install hyprland-monitor-attached
 
@@ -118,7 +118,7 @@ Replace `YOUR_USERNAME` with your actual username.
 
 Hyprland should automatically restart when it detects a change to the configuration; otherwise, you can restart your session by selecting "Relaunch" from the Omarchy "System" menu.
 
-## Troubleshooting Additional Issues
+## Troubleshooting additional issues
 
 * Verify you replaced all of the variables in your bash script with the correct files
 * Make sure you made your bash script executable

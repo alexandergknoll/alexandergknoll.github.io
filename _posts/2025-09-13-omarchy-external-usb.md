@@ -7,11 +7,11 @@ tags: [omarchy, arch-linux, usb-installation, bootloader, limine, troubleshootin
 
 ## Introduction
 
-Over the past week or so, I've been test driving [Omarchy](https://omarchy.org/) as my primary OS. Omarchy is an opinionated Arch Linux distribution that ships with the modern tiling window manager [Hyprland](https://hypr.land/), something I had been interested in trying for some time. I wanted to install Omarchy to an external USB drive so that I could fall back to my existing Arch Linux installation on my internal drive if I ran into any issues.  The installation process seemed to complete successfully, however I encountered boot failures that prevented the system from starting properly.
+Over the past week or so, I've been test driving [Omarchy](https://omarchy.org/) as my primary OS.  Omarchy is an opinionated Arch Linux distribution that ships with the modern tiling window manager [Hyprland](https://hypr.land/), something I had been interested in trying for some time. I wanted to install Omarchy to an external USB drive so that I could fall back to my existing Arch Linux installation on my internal drive if I ran into any issues.  The installation process seemed to complete successfully, however I encountered boot failures that prevented the system from starting properly.
 
 This post describes the problem in more detail and provides step-by-step instructions to resolve the issue.
 
-## The Problem: Failed Root Mount on Boot
+## The problem: failed root mount on boot
 
 After successfully installing Omarchy 2.0 to an external USB device, I encountered the following error during boot:
 
@@ -21,7 +21,7 @@ You are now being dropped into an emergency shell.
 sh: can't access tty; job control turned off
 ```
 
-The issue in this case was that the bootloader cannot locate or mount the encrypted root partition. I needed to do the following to fix the issue:
+The issue in this case was that the bootloader cannot locate or mount the encrypted root partition.  I needed to do the following to fix the issue:
 
 1. Fix the kernel command line parameters in the Limine bootloader configuration so that I could mount and boot to the partition on my USB device
 2. Update the Limine configuration so that future updates to the kernel/OS do not break the bootloader configuration
@@ -36,9 +36,9 @@ To fix the issue, you will need the following:
 
 In my case, I was able to perform the steps below by booting to my Arch installation on my internal disk, but you could also do this by booting to a live CD environment.
 
-## Step-by-Step Solution
+## Step-by-step solution
 
-### 1. Identify Block Devices
+### 1. Identify block devices
 
 First, identify your USB device and its partitions using the `lsblk` command:
 
@@ -62,7 +62,7 @@ In this example, `sda` represents the external USB device with:
 * `sda1`: Boot partition (2GB)
 * `sda2`: Encrypted root partition (230.9GB)
 
-### 2. Mount the Boot Partition
+### 2. Mount the boot partition
 
 Mount the boot partition to access the Limine bootloader configuration:
 
@@ -72,7 +72,7 @@ sudo mount /dev/sda1 /mnt/
 
 Replace `/dev/sda1` with your actual boot partition device path if different.
 
-### 3. Retrieve the Root Partition UUID
+### 3. Retrieve the root partition UUID
 
 Get the UUID of your encrypted root partition:
 
@@ -87,7 +87,7 @@ This command will output something like:
 
 Copy the UUID value as you'll need it for the next step.
 
-### 4. Update Limine Configuration
+### 4. Update Limine configuration
 
 Edit the Limine bootloader configuration file, `/mnt/limine.conf`, and locate the boot entry for Omarchy.  Update the `kernel_cmdline` parameter with the following configuration:
 
@@ -97,7 +97,7 @@ kernel_cmdline: cryptdevice=UUID=YOUR_UUID_HERE:root root=/dev/mapper/root rootf
 
 Replace `YOUR_UUID_HERE` with the actual UUID you obtained in step 3.
 
-#### Explanation of Kernel Parameters
+#### Explanation of kernel parameters
 
 * `cryptdevice=UUID=...:root`: Specifies the encrypted device and maps it to `/dev/mapper/root`
 * `root=/dev/mapper/root`: Sets the root filesystem location after decryption
@@ -106,7 +106,7 @@ Replace `YOUR_UUID_HERE` with the actual UUID you obtained in step 3.
 * `rw`: Mounts the root filesystem as read-write
 * `quiet splash`: Suppresses verbose boot messages and shows a splash screen
 
-### 5. Configure Persistent Boot Parameters
+### 5. Configure persistent boot parameters
 
 To ensure future kernel updates maintain the correct boot parameters, edit the Limine entry tool configuration file `/etc/limine-entry-tool.conf`.  Add or modify the following line:
 
@@ -118,7 +118,7 @@ Replace `YOUR_UUID_HERE` with the actual UUID you obtained in step 3.
 
 This configuration ensures that whenever the kernel is updated, the correct boot parameters are automatically applied to new Limine entries.
 
-## Verification and Testing
+## Verification and testing
 
 After making these changes:
 

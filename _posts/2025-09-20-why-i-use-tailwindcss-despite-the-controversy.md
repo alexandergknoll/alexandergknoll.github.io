@@ -49,7 +49,7 @@ By default, Tailwind will parse the files in your project in any directories tha
 
 ### Extensibility and developer experience
 
-Tailwind's configuration system makes it incredibly easy to extend the framework with your own custom utilities, variants, and design tokens. The developer experience is enhanced through excellent [IntelliSense](https://code.visualstudio.com/docs/editing/intellisense) support, comprehensive documentation, and a vibrant ecosystem of plugins and tools. The framework also provides powerful features like arbitrary value support (using square brackets like `w-[123px]`) and just-in-time compilation that generates styles on-demand as you author your templates.
+Tailwind's configuration system makes it incredibly easy to extend the framework with your own custom utilities, variants, and design tokens.  The developer experience is enhanced through excellent [IntelliSense](https://code.visualstudio.com/docs/editing/intellisense) support, comprehensive documentation, and a vibrant ecosystem of plugins and tools.  The framework also provides powerful features like arbitrary value support (using square brackets like `w-[123px]`) and just-in-time compilation that generates styles on-demand as you author your templates.
 
 ## What's the controversy over?
 
@@ -57,7 +57,7 @@ You might be thinking that this all sounds great so far; what could be so contro
 
 ### Verbose, non-semantic class naming
 
-One of the most common criticisms of Tailwind is that it produces HTML that's difficult to read due to long strings of utility classes. Instead of semantic class names like `.navbar` or `.section-heading`, you'll see classes like `flex items-center justify-between px-4 py-2 bg-blue-500 text-white rounded-lg`. To many developers, this feels like a regression to the bad old days of inline styling, where presentation logic was mixed directly with markup.
+One of the most common criticisms of Tailwind is that it produces HTML that's difficult to read due to long strings of utility classes.  Instead of semantic class names like `.navbar` or `.section-heading`, you'll see classes like `flex items-center justify-between px-4 py-2 bg-blue-500 text-white rounded-lg`.  To many developers, this feels like a regression to the bad old days of inline styling, where presentation logic was mixed directly with markup.
 
 Compare these two approaches for creating a navigation bar:
 
@@ -117,15 +117,15 @@ Compare these two approaches for creating a navigation bar:
 
 ### Separation of concerns
 
-Traditional web development has long advocated for a clear separation of concerns: HTML for structure and hierarchy, CSS for presentation and styling, and JavaScript for behavior and functionality. Tailwind deliberately blurs the line between HTML and CSS, putting styling decisions directly in the markup. This challenges a fundamental principle that many developers have built their careers around, making it feel like we're abandoning best practices that took years to establish.
+Traditional web development has long advocated for a clear separation of concerns: HTML for structure and hierarchy, CSS for presentation and styling, and JavaScript for behavior and functionality.  Tailwind deliberately blurs the line between HTML and CSS, putting styling decisions directly in the markup.  This challenges a fundamental principle that many developers have built their careers around, making it feel like we're abandoning best practices that took years to establish.
 
 ### Entrenched architecture patterns
 
-Many developers have invested significant time learning CSS methodologies like [BEM (Block Element Modifier)](https://getbem.com/), [OOCSS (Object-Oriented CSS)](https://medium.com/@cssjhnnamae/an-introduction-to-object-oriented-css-oocss-0b9cd97ee038), and [SMACSS (Scalable and Modular Architecture for CSS)](https://smacss.com/). These systems provide structured approaches to organizing and naming CSS classes. Tailwind's utility-first approach sidesteps these methodologies entirely, which can feel like throwing away years of accumulated knowledge and best practices.
+Many developers have invested significant time learning CSS methodologies like [BEM (Block Element Modifier)](https://getbem.com/), [OOCSS (Object-Oriented CSS)](https://medium.com/@cssjhnnamae/an-introduction-to-object-oriented-css-oocss-0b9cd97ee038), and [SMACSS (Scalable and Modular Architecture for CSS)](https://smacss.com/).  These systems provide structured approaches to organizing and naming CSS classes.  Tailwind's utility-first approach sidesteps these methodologies entirely, which can feel like throwing away years of accumulated knowledge and best practices.
 
 ### Additional HTML maintenance challenges
 
-Because HTML becomes the single source of truth for styling with Tailwind, it becomes very important to implement good component and partial HTML abstraction to avoid repetition of long strings of utility classes across your codebase. Without proper componentization, you can end up with unmaintainable HTML files filled with repeated class combinations that become a nightmare to update consistently.
+Because HTML becomes the single source of truth for styling with Tailwind, it becomes very important to implement good component and partial HTML abstraction to avoid repetition of long strings of utility classes across your codebase.  Without proper componentization, you can end up with unmaintainable HTML files filled with repeated class combinations that become a nightmare to update consistently.
 
 For example, without proper componentization, you might find yourself repeating the same button classes throughout your application:
 
@@ -144,7 +144,7 @@ For example, without proper componentization, you might find yourself repeating 
 </button>
 ```
 
-The solution is to extract these into reusable components. In React, for example:
+The solution is to extract these into reusable components.  In React, for example:
 
 ```jsx
 function Button({ children, onClick, type = "button" }) {
@@ -171,11 +171,11 @@ Although these are all valid concerns, I believe the benefits of Tailwind far ou
 
 ### Clear intent & consistent patterns
 
-With Tailwind, you can immediately see what styles are applied just by looking at the HTML without hunting through CSS files. There's no mystery about where a particular style is coming from or what CSS rule might be overriding another. The styling is explicit and co-located with the markup, making it much easier to understand the visual structure of a component at a glance.
+With Tailwind, you can immediately see what styles are applied just by looking at the HTML without hunting through CSS files.  There's no mystery about where a particular style is coming from or what CSS rule might be overriding another.  The styling is explicit and co-located with the markup, making it much easier to understand the visual structure of a component at a glance.
 
 ### Refactoring with confidence
 
-In the traditional approach to CSS, if you have a class like `.card` and you decide to change some properties on it, you might break a component somewhere that you didn't even know was using that style. The larger and more complex a project becomes, the more risk and fear you experience every time you touch something in a stylesheet. Any change to your CSS carries a risk of causing unintended and unpredictable consequences throughout your codebase.
+In the traditional approach to CSS, if you have a class like `.card` and you decide to change some properties on it, you might break a component somewhere that you didn't even know was using that style.  The larger and more complex a project becomes, the more risk and fear you experience every time you touch something in a stylesheet.  Any change to your CSS carries a risk of causing unintended and unpredictable consequences throughout your codebase.
 
 For example, consider the following traditional CSS scenario:
 
@@ -209,22 +209,22 @@ With the Tailwind approach, you know with 100% confidence that by modifying util
 
 ### No dead CSS
 
-With Tailwind's utility-first approach and built-in purging, you never accumulate dead CSS. Every class that appears in your final stylesheet is actually being used somewhere in your codebase.  Traditional CSS approaches often lead to bloated stylesheets filled with unused rules due to the fear of breaking something by removing those styles.
+With Tailwind's utility-first approach and built-in purging, you never accumulate dead CSS.  Every class that appears in your final stylesheet is actually being used somewhere in your codebase.  Traditional CSS approaches often lead to bloated stylesheets filled with unused rules due to the fear of breaking something by removing those styles.
 
 ### No more ever-growing stylesheets
 
-Because you effectively stop writing CSS in stylesheets when you style with Tailwind, and because unused utilities are automatically purged from your production build, your CSS bundle size remains predictably small and doesn't grow over time. Traditional CSS architectures often suffer from continuously growing stylesheet files that become harder to maintain as projects mature.
+Because you effectively stop writing CSS in stylesheets when you style with Tailwind, and because unused utilities are automatically purged from your production build, your CSS bundle size remains predictably small and doesn't grow over time.  Traditional CSS architectures often suffer from continuously growing stylesheet files that become harder to maintain as projects mature.
 
 ### Speed & agility of working with established codebases
 
-If you're familiar with Tailwind at even a fairly basic level, you can easily and confidently navigate and implement changes to other projects that use Tailwind without the burden of having to familiarize yourself with a project's custom CSS architecture. The utility classes are standardized across all Tailwind projects, so your knowledge transfers seamlessly from one codebase to another. This dramatically reduces the ramp-up time for new developers joining a project and makes context switching between different Tailwind-based projects much more efficient.
+If you're familiar with Tailwind at even a fairly basic level, you can easily and confidently navigate and implement changes to other projects that use Tailwind without the burden of having to familiarize yourself with a project's custom CSS architecture.  The utility classes are standardized across all Tailwind projects, so your knowledge transfers seamlessly from one codebase to another.  This dramatically reduces the ramp-up time for new developers joining a project and makes context switching between different Tailwind-based projects much more efficient.
 
 ## Conclusion
 
-While TailwindCSS has its critics, I believe it represents a significant step forward in CSS architecture. The utility-first approach solves real problems that have plagued CSS development: unpredictable cascades, bloated stylesheets, refactoring anxiety, and complex maintenance overhead.
+While TailwindCSS has its critics, I believe it represents a significant step forward in CSS architecture.  The utility-first approach solves real problems that have plagued CSS development: unpredictable cascades, bloated stylesheets, refactoring anxiety, and complex maintenance overhead.
 
 What looks like a regression to "inline styling" is actually a carefully designed system that captures the benefits of inline styles (predictability, locality, explicit intent) while avoiding the drawbacks through systematic design tokens and utility generation.
 
-It does require a mindset shift and it does challenge conventional separation of concerns. But once you embrace utility-first thinking and establish good component patterns, you'll build UIs faster, with more confidence, and far less technical debt.  The controversy around Tailwind often stems from challenging established practices rather than fundamental flaws. For those who to embrace this shift, TailwindCSS offers one of the most productive and maintainable approaches to styling in modern web development.
+It does require a mindset shift and it does challenge conventional separation of concerns.  But once you embrace utility-first thinking and establish good component patterns, you'll build UIs faster, with more confidence, and far less technical debt.   The controversy around Tailwind often stems from challenging established practices rather than fundamental flaws.  For those who to embrace this shift, TailwindCSS offers one of the most productive and maintainable approaches to styling in modern web development.
 
 **Questions or comments?** Sign in with GitHub to comment below!
