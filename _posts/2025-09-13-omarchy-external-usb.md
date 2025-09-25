@@ -5,8 +5,6 @@ categories: [Linux, Omarchy]
 tags: [linux, arch-linux, omarchy, usb-installation, bootloader, limine, troubleshooting]
 ---
 
-## Introduction
-
 Over the past week or so, I've been test driving [Omarchy](https://omarchy.org/) as my primary OS.  Omarchy is an opinionated Arch Linux distribution that ships with the modern tiling window manager [Hyprland](https://hypr.land/), something I had been interested in trying for some time. I wanted to install Omarchy to an external USB drive so that I could fall back to my existing Arch Linux installation on my internal drive if I ran into any issues.  The installation process seemed to complete successfully, however I encountered boot failures that prevented the system from starting properly.
 
 This post describes the problem in more detail and provides step-by-step instructions to resolve the issue.

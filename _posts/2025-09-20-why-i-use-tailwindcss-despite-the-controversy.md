@@ -5,8 +5,6 @@ categories: [Development, Frontend]
 tags: [development, frontend, html, css, tailwindcss]
 ---
 
-## Introduction
-
 As a heavy user of [TailwindCSS](https://tailwindcss.com/) since its first major release over 5 years ago, I'm often asked what makes it so great.  Typically, the question comes from more seasoned developers who can't understand why someone would want to go back to a practice that looks an awful lot like glorified [inline CSS styling](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/style).  It's hard for me to think of another single tool that has changed my approach and workflow so much, and at the same time I often struggle to explain to skeptics why I believe its adoption can be such an asset.
 
 This post aims to explain what makes it so different from its predecessors, what makes it controversial and why, despite that controversy, I believe it's one of the best and most important tools created for frontend developers in the last decade.

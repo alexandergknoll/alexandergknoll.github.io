@@ -5,8 +5,6 @@ categories: [Linux, Omarchy]
 tags: [linux, arch-linux, omarchy, monitor, hyprland]
 ---
 
-## Introduction
-
 After installing [Omarchy](https://omarchy.org/) as my OS which comes with the tiling window manager [Hyprland](https://hypr.land/), I realized that having a multi-monitor setup compounds the learning curve when working with a completely new UI with new keybindings.  To solve this, I wanted to configure my setup to automatically disable my internal [Framework 13](https://frame.work/) laptop display whenever an external display was connected (and re-enable it when it was disconnected).
 
 ## Configuring monitors in Omarchy
