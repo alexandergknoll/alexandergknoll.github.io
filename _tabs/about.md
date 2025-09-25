@@ -4,21 +4,21 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-## Your full-stack web development partner
+## Your web development partner
 
-I'm a freelance web developer based in Worcester, MA, with over a decade of experience helping small- and medium-sized companies navigate the complex world of web development.  Since 2015, I've built and shipped over 125 projects to production, but what sets me apart isn't just the volume; it's the breadth and depth of expertise I bring to every engagement.
+I'm a freelance web developer based in Worcester, MA, with over a decade of experience helping small- and medium-sized companies navigate the complex world of web development.  I've built and shipped over 125 projects to production, but what sets me apart isn't how many projects I've shipped; it's the breadth and depth of expertise I bring to every engagement.
 
 ## Breadth of expertise matters
 
-Most developers specialize in one area.  I've deliberately cultivated expertise across the entire web development ecosystem.  My background spans:
+Rather than specialize in one area, I've cultivated expertise across the entire web development ecosystem.  My background spans:
 
 **Full-stack development**: From frontend frameworks like React, Vue, Next.js, and Nuxt.js to backend business logic in Ruby on Rails and other full-stack frameworks, I handle every layer of your application.
 
-**Design & user experience**: Years of collaboration with designers and UX experts have developed my intuition for what makes websites not just functional, but beautiful and effective.
+**Design & user experience**: Years of collaboration with designers and UX experts have allowed me to develop an intuition for what makes websites not just functional, but beautiful and effective.
 
-**Performance & analytics**: Performance is top-of-mind for every project I work on.  Fast-loading websites don't just improve user experience, they directly impact conversion rates, SEO rankings, and your bottom line.  I help measure what matters, implementing analytics to track KPIs and conversion rates that affect your bottom line.
+**Performance & analytics**: Performance is top-of-mind for every project I work on.  Fast-loading websites don't just improve user experience, they directly impact conversion rates, SEO rankings, and ultimately your bottom line.
 
-**SEO & visibility**: Your website needs to be found.  I optimize for organic search traffic and help you understand what's working and what isn't.
+**SEO & visibility**: I optimize for organic search traffic and help you understand what's working and what isn't.  Your website needs to be discoverable and reach its intended audience in order to be effective.
 
 **Security & compliance**: I audit sites for vulnerabilities and ensure WCAG accessibility standards are met, protecting both your business and your users (making a website accessible to those with disabilities isn't just the right thing to do - it's [the law](https://www.ada.gov/resources/web-guidance/)!).
 
@@ -30,15 +30,15 @@ Most developers specialize in one area.  I've deliberately cultivated expertise 
 
 I usually fit best with clients who are large enough to need robust, purpose-built solutions that can't be achieved with something out-of-the-box, but who also don't have the resources to hire specialists in-house.  You might be a growing business that needs someone who can wear multiple hats, or an established company looking for an expert consultant who can see the big picture.
 
-What I look for in clients:
+What I look for in a client:
 
-* **Interesting problems to solve**: I thrive on technical challenges and complex requirements
 * **Collaborative mindset**: The best results come from working together as partners
+* **Interesting problems to solve**: I thrive on technical challenges and complex requirements
 * **Long-term thinking**: While I handle fixed projects, I prefer building ongoing relationships
 
 ## My approach
 
-I pride myself on providing honest recommendations and never upselling services you don't need.  I advocate for solutions that give you the best value, even if that means I make less money.  My goal is to give you freedom: freedom from vendor lock-in, freedom to work with other developers in the future, and freedom to focus on growing your business.
+I pride myself on providing honest recommendations and never upselling you on services you don't need.  I advocate for solutions that give you the best value, even if that means I make less money.  My goal is to give you freedom: freedom from vendor lock-in, freedom to work with other developers in the future, and freedom to focus on growing your business.
 
 When you work with me, you're not just hiring a developer.  You're getting an integrated team member who will:
 
@@ -50,7 +50,7 @@ When you work with me, you're not just hiring a developer.  You're getting an in
 
 ## Technical expertise
 
-My toolkit includes modern web technologies across the full stack:
+My toolkit includes modern web technologies including (but not limited to!):
 
 ### Frontend technologies
 
