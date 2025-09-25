@@ -2,7 +2,7 @@
 title: Installing Omarchy to an external USB device & troubleshooting boot issues
 date: 2025-09-13 14:57:00
 categories: [Linux, Omarchy]
-tags: [omarchy, arch-linux, usb-installation, bootloader, limine, troubleshooting]
+tags: [linux, arch-linux, omarchy, usb-installation, bootloader, limine, troubleshooting]
 ---
 
 ## Introduction
