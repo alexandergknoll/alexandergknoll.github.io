@@ -1,6 +1,6 @@
 ---
 title: Why I use TailwindCSS despite the controversy
-date: 2025-09-22 13:34:00
+date: 2025-09-20 13:34:00
 categories: [Development, Frontend]
 tags: [development, frontend, html, css, tailwindcss]
 ---
