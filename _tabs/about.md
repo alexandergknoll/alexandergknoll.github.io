@@ -6,11 +6,11 @@ order: 4
 
 ## Your web development partner
 
-I'm a freelance web developer based in Worcester, MA, with over a decade of experience helping small- and medium-sized companies navigate the complex world of web development.  I've built and shipped over 125 projects to production, but what sets me apart isn't how many projects I've shipped; it's the breadth and depth of expertise I bring to every engagement.
+I'm a freelance web developer based in Worcester, MA, with over a decade of experience helping small- and medium-sized companies navigate the world of web development.  I've built and shipped over 125 projects to production, but what sets me apart isn't how many projects I've shipped; it's the breadth and depth of expertise I bring to every engagement.
 
 ## Breadth of expertise matters
 
-Rather than specialize in one area, I've cultivated expertise across the entire web development ecosystem.  My background spans:
+Rather than specialize in one area, I've cultivated expertise across the entire web development ecosystem.  My experience spans:
 
 **Full-stack development**: From frontend frameworks like React, Vue, Next.js, and Nuxt.js to backend business logic in Ruby on Rails and other full-stack frameworks, I handle every layer of your application.
 
