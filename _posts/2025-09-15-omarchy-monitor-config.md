@@ -34,7 +34,7 @@ monitor=,preferred,auto,auto
 # monitor = eDP-1, 2880x1920@120, auto, 2
 ```
 
-For a static workstation that always has the same setup, setting your configuration here may work fine, but I wanted to use different configurations depending on whether or not an external screen was connected.
+For a static workstation that always has the same setup, setting your configuration here may work fine.  But I wanted to use different configurations depending on whether or not an external screen was connected.
 
 To solve this, I used the wonderful [hyprland-monitor-attached](https://github.com/coffebar/hyprland-monitor-attached) Hyprland plugin that listens for `monitoradded` and `monitorremoved` events to execute bash script.
 
@@ -89,9 +89,9 @@ else
 fi
 ```
 
-**Tweak this script according to your use case:**
+Make sure you adjust this script for your particular use case:
 
-* Replace `YOUR_USERNAME` and `YOUR_UID` with your actual user/UID (see inline comment in script)
+* Replace `YOUR_USERNAME` and `YOUR_UID` with your actual user/UID (see inline comments explaining how to get these values for your system)
 * Adjust line 33 to set the scale factor accordingly for your internal laptop's display.  I set mine to `2` since I have a high resolution display for my internal laptop screen, but if you have a 1080p or similar lower resolution internal display, you may be better off setting this to `1`.  In that case, line 33 would look like this:
 
 ```bash
@@ -110,11 +110,14 @@ exec-once = bash /home/YOUR_USERNAME/.local/bin/monitor-config.sh # configure mo
 exec-once = hyprland-monitor-attached /home/YOUR_USERNAME/.local/bin/monitor-config.sh # configure monitors when monitors change
 ```
 
-Replace `YOUR_USERNAME` with your actual username.
+> Replace `YOUR_USERNAME` with your actual username.
+{: .prompt-info }
 
 ### 4. Restart Hyprland
 
 Hyprland should automatically restart when it detects a change to the configuration; otherwise, you can restart your session by selecting "Relaunch" from the Omarchy "System" menu.
+
+After relaunching, your system should now be configured to change your monitor configuration automatically when you connect/disconnect your external monitor.
 
 ## Troubleshooting additional issues
 
