@@ -5,7 +5,7 @@ categories: [Linux, Omarchy]
 tags: [linux, arch-linux, omarchy, usb-installation, bootloader, limine, troubleshooting]
 ---
 
-Over the past week or so, I've been test driving [Omarchy](https://omarchy.org/) as my primary OS.  Omarchy is an opinionated Arch Linux distribution that ships with the modern tiling window manager [Hyprland](https://hypr.land/), something I had been interested in trying for some time. I wanted to install Omarchy to an external USB drive so that I could fall back to my existing Arch Linux installation on my internal drive if I ran into any issues.  After the initial installation process seemed to complete successfully, I encountered boot failures that prevented the system from starting properly.
+Over the past week or so, I've been test driving [Omarchy](https://omarchy.org/) as my primary OS. Omarchy is an opinionated Arch Linux distribution that ships with the modern tiling window manager [Hyprland](https://hypr.land/), something I had been interested in trying for some time. I wanted to install Omarchy to an external USB drive so that I could fall back to my existing Arch Linux installation on my internal drive if I ran into any issues. After the initial installation process seemed to complete successfully, I encountered boot failures that prevented the system from starting properly.
 
 ## The problem: failed root mount on boot
 
@@ -17,7 +17,7 @@ You are now being dropped into an emergency shell.
 sh: can't access tty; job control turned off
 ```
 
-The issue in this case was that the bootloader could not locate or mount the encrypted root partition.  To fix the issue, I needed to:
+The issue in this case was that the bootloader could not locate or mount the encrypted root partition. To fix the issue, I needed to:
 
 1. Fix the kernel command line parameters in the Limine bootloader configuration so that I could mount and boot to the partition on my USB device
 2. Update the Limine configuration so that future updates to the kernel/OS did not break the bootloader configuration
@@ -86,7 +86,7 @@ Copy the UUID value as you'll need it for the next step.
 
 ### 4. Update Limine configuration
 
-Edit the Limine bootloader configuration file, `/mnt/limine.conf`, and locate the boot entry for Omarchy.  Update the `kernel_cmdline` parameter with the following configuration:
+Edit the Limine bootloader configuration file, `/mnt/limine.conf`, and locate the boot entry for Omarchy. Update the `kernel_cmdline` parameter with the following configuration:
 
 ```terminal
 kernel_cmdline: cryptdevice=UUID=YOUR_UUID_HERE:root root=/dev/mapper/root rootflags=subvol=@ rootfstype=btrfs rw quiet splash
@@ -106,7 +106,7 @@ kernel_cmdline: cryptdevice=UUID=YOUR_UUID_HERE:root root=/dev/mapper/root rootf
 
 ### 5. Configure persistent boot parameters
 
-To ensure future kernel updates maintain the correct boot parameters and don't get overwritten, edit the Limine entry tool configuration file `/etc/limine-entry-tool.conf`.  Add or update the following line:
+To ensure future kernel updates maintain the correct boot parameters and don't get overwritten, edit the Limine entry tool configuration file `/etc/limine-entry-tool.conf`. Add or update the following line:
 
 ```terminal
 KERNEL_CMDLINE[default]+="cryptdevice=UUID=YOUR_UUID_HERE:root root=/dev/mapper/root rootflags=subvol=@ rootfstype=btrfs rw quiet splash"

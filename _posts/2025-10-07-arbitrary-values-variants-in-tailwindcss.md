@@ -5,9 +5,7 @@ categories: [Development, Frontend]
 tags: [development, frontend, html, css, tailwindcss]
 ---
 
-[TailwindCSS](https://tailwindcss.com/) has several lesser-known advanced features that can be useful for handling edge cases that many believe would require you to add custom CSS to a stylesheet.  In fact, it's possible to handle these without having to ever write a single line of CSS in your stylesheet.
-
-This post documents two features that solve some common scenarios I encounter as a web developer.
+[TailwindCSS](https://tailwindcss.com/) has several lesser-known advanced features that can be useful for handling edge cases that many believe would require you to add custom CSS to a stylesheet. In fact, it's possible to handle these without having to ever write a single line of CSS in your stylesheet.
 
 ## 1. Arbitrary values
 
@@ -26,7 +24,7 @@ Consider a card component built with Tailwind utility classes:
 </div>
 ```
 
-This card works great throughout your project. But on one page, you need a background color of `#dbdbdb` and a width of `410px` (neither of which are values that are part of Tailwind's default configuration).  These one-off styles are needed for this page only and are very unlikely to be needed anywhere else in the project.
+This card works great throughout your project. But on one page, you need a background color of `#dbdbdb` and a width of `410px` (neither of which are values that are part of Tailwind's default configuration). These one-off styles are needed for this page only and are very unlikely to be needed anywhere else in the project.
 
 Without using Tailwind's arbitrary values feature, there are a few possible solutions, all of which come with drawbacks.
 
@@ -55,7 +53,7 @@ The most obvious solution is to just write a custom class and add it to your sty
 </div>
 ```
 
-This works in a pinch, but *feels backwards* when it comes to Tailwind's core principles. It suffers from some of the issues I discussed in my [first post about TailwindCSS](/posts/why-i-use-tailwindcss-despite-the-controversy/):
+This works in a pinch, but *feels wrong* when it comes to Tailwind's core principles. It suffers from some of the issues I discussed in my [first post about TailwindCSS](/posts/why-i-use-tailwindcss-despite-the-controversy/):
 
 1. Tightly coupled HTML and CSS that both need to be maintained in your codebase
 2. The `.special-card` class is not automatically purged from your stylesheet if you remove it from your HTML in the future, potentially leading to the accumulation of [dead CSS](/posts/why-i-use-tailwindcss-despite-the-controversy/#no-dead-css)
@@ -84,7 +82,7 @@ By extending Tailwind using theme variables, we can scaffold its built-in utilit
 </div>
 ```
 
-This is a more "Tailwind" way of solving the problem and does at least allow for the purging of unused CSS by extending Tailwind's configuration.  If removed from the HTML markup, the `.bg-card` CSS class is automatically purged from the stylesheet, for example.
+This is a more "Tailwind" way of solving the problem and does at least allow for the purging of unused CSS by extending Tailwind's configuration. If removed from the HTML markup, the `.bg-card` CSS class is automatically purged from the stylesheet, for example.
 
 One drawback to this solution is that we've extended these custom values to other utility classes where it might not make sense to have them. For example, with this configuration you would also have utility classes for padding and margins of 410px using `p-card` or `m-card`. One of the core principles of extending Tailwind's configuration in this way is to use it as a tool for creating a [design system](/posts/why-i-use-tailwindcss-despite-the-controversy/#design-system-architecture) for your project, which promotes consistency of tokens for colors, spacing, and other styles that create a cohesive look & feel. In that way, polluting that configuration with one-off tokens that don't have any meaning in the broader context of your project's design system isn't ideal.
 
@@ -99,7 +97,7 @@ One drawback to this solution is that we've extended these custom values to othe
 </div>
 ```
 
-The best solution is to use Tailwind's arbitrary values feature which allows you to specify exact CSS values inline using square brackets. This works with virtually any Tailwind utility: `text-[14px]`, `top-[117px]`, `grid-cols-[200px_minmax(900px,_1fr)_100px]` (admittedly, it is **extremely** ugly in some instances). The generated CSS is still automatically purged when removed from your HTML.
+The best solution is to use Tailwind's arbitrary values feature which allows you to specify exact CSS values inline using square brackets. This works with virtually any Tailwind utility: `text-[14px]`, `top-[117px]`, `grid-cols-[200px_minmax(900px,_1fr)_100px]` (admittedly, it is **extremely ugly** in some cases). The generated CSS is still automatically purged when removed from your HTML.
 
 This is the ideal solution for one-off styles that don't fit into your design system. You get all the benefits of Tailwind's utility-first approach without needing to extend your configuration or write custom CSS in a stylesheet.
 
@@ -125,7 +123,7 @@ When integrating third-party libraries, you often can't control the injected HTM
 </div>
 ```
 
-You have no control over the markup structure or the classes applied to these elements which are generated by the third-party library. But you need to style them to match your site's design.  Without using Tailwind's arbitrary variants feature, there are a few possible solutions, all of which have drawbacks.
+You have no control over the markup structure or the classes applied to these elements which are generated by the third-party library. But you need to style them to match your site's design. Without using Tailwind's arbitrary variants feature, there are a few possible solutions, all of which have drawbacks.
 
 #### Worst solution: write custom CSS targeting the injected elements
 
@@ -184,7 +182,7 @@ Tailwind v4 introduced built-in child selector variants that allow you to target
 </div>
 ```
 
-This is much better: we're back to using Tailwind utilities and staying within our design system. However, the built-in child selectors are very limited and we can't apply styles to specific types of elements. And you won't be able to target nested elements (like the `<li>` elements inside the `<ul>`), or use more complex selectors.  So this only gets us part of the way.
+This is much better: we're back to using Tailwind utilities and staying within our design system. However, the built-in child selectors are very limited and we can't apply styles to specific types of elements. And you won't be able to target nested elements (like the `<li>` elements inside the `<ul>`), or use more complex selectors. So this only gets us part of the way.
 
 #### Best solution: use arbitrary variants with Tailwind's utility classes
 

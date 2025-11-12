@@ -5,11 +5,11 @@ categories: [Linux, Omarchy]
 tags: [linux, arch-linux, omarchy, monitor, hyprland]
 ---
 
-After installing [Omarchy](https://omarchy.org/) as my OS which comes with the tiling window manager [Hyprland](https://hypr.land/), I realized that having a multi-monitor setup compounds the learning curve when working with a completely new UI with new keybindings.  To solve this, I wanted to configure my setup to automatically disable my internal [Framework 13](https://frame.work/) laptop display whenever an external display was connected (and re-enable it when it was disconnected).
+After installing [Omarchy](https://omarchy.org/) as my OS which comes with the tiling window manager [Hyprland](https://hypr.land/), I realized that having a multi-monitor setup compounds the learning curve when working with a completely new UI with new keybindings. To solve this, I wanted to configure my setup to automatically disable my internal [Framework 13](https://frame.work/) laptop display whenever an external display was connected (and re-enable it when it was disconnected).
 
 ## Configuring monitors in Omarchy
 
-Hyprland offers a CLI-only approach to configuring monitors.  It does make an attempt to automatically configure new monitors when connected with somewhat sensible defaults, but any further changes need to be made by editing the configuration located at `~/.config/hypr/monitors.conf`.  This is what `monitors.conf` looks like after you install Omarchy:
+Hyprland offers a CLI-only approach to configuring monitors. It does make an attempt to automatically configure new monitors when connected with somewhat sensible defaults, but any further changes need to be made by editing the configuration located at `~/.config/hypr/monitors.conf`. This is what `monitors.conf` looks like after you install Omarchy:
 
 ```conf
 # See https://wiki.hyprland.org/Configuring/Monitors/
@@ -34,7 +34,7 @@ monitor=,preferred,auto,auto
 # monitor = eDP-1, 2880x1920@120, auto, 2
 ```
 
-For a static workstation that always has the same setup, setting your configuration here may work fine.  But I wanted to use different configurations depending on whether or not an external screen was connected.
+For a static workstation that always has the same setup, setting your configuration here may work fine. But I wanted to use different configurations depending on whether or not an external screen was connected.
 
 To solve this, I used the wonderful [hyprland-monitor-attached](https://github.com/coffebar/hyprland-monitor-attached) Hyprland plugin that listens for `monitoradded` and `monitorremoved` events to execute bash script.
 
@@ -50,7 +50,7 @@ yay -S hyprland-monitor-attached
 
 ### 2. Create an executable bash script
 
-Next, create the bash script that will execute when a monitor is added or removed.  I chose to create mine at `~/.local/bin/monitor-config.sh`:
+Next, create the bash script that will execute when a monitor is added or removed. I chose to create mine at `~/.local/bin/monitor-config.sh`:
 
 ```bash
 #!/bin/bash
@@ -58,7 +58,7 @@ LAPTOP_DISPLAY="eDP-1" # most likely eDP-1, but you can confirm with `hyprctl mo
 USER="YOUR_USERNAME" # get username with `echo $USER`
 UUID="YOUR_UID" # get UID with `echo $UID`
 
-# Get the active Hyprland instance/signature.  This is needed in case the script is executed as root
+# Get the active Hyprland instance/signature. This is needed in case the script is executed as root
 active_instance=""
 for instance in /run/user/$UUID/hypr/*; do
   if [[ -d "$instance" ]]; then
@@ -92,7 +92,7 @@ fi
 Make sure you adjust this script for your particular use case:
 
 * Replace `YOUR_USERNAME` and `YOUR_UID` with your actual user/UID (see inline comments explaining how to get these values for your system)
-* Adjust line 33 to set the scale factor accordingly for your internal laptop's display.  I set mine to `2` since I have a high resolution display for my internal laptop screen, but if you have a 1080p or similar lower resolution internal display, you may be better off setting this to `1`.  In that case, line 33 would look like this:
+* Adjust line 33 to set the scale factor accordingly for your internal laptop's display. I set mine to `2` since I have a high resolution display for my internal laptop screen, but if you have a 1080p or similar lower resolution internal display, you may be better off setting this to `1`. In that case, line 33 would look like this:
 
 ```bash
 sudo -u "$USER" HYPRLAND_INSTANCE_SIGNATURE="$active_instance" hyprctl keyword monitor "$LAPTOP_DISPLAY,preferred,auto,1" 
@@ -127,6 +127,6 @@ After relaunching, your system should now be configured to change your monitor c
 
 ## Conclusion
 
-This should properly configure monitors on boot as well as when monitors are attached/removed.  You can tweak this bash script for many other use cases as well, but hopefully this helps for anyone looking to have a similar setup.
+This should properly configure monitors on boot as well as when monitors are attached/removed. You can tweak this bash script for many other use cases as well, but hopefully this helps for anyone looking to have a similar setup.
 
 **Questions or comments?** Sign in with GitHub to comment below!
