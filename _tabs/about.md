@@ -6,7 +6,7 @@ order: 4
 
 ## Your web development partner
 
-I'm a freelance web developer based in Worcester, MA, with over a decade of experience helping small- and medium-sized companies navigate the world of web development.  I've built and shipped over 125 projects to production, but what sets me apart isn't how many projects I've shipped; it's the breadth and depth of expertise I bring to every engagement.
+I'm a freelance web developer based in Lee, NH, with over a decade of experience helping small- and medium-sized companies navigate the world of web development.  I've built and shipped over 125 projects to production, but what sets me apart isn't how many projects I've shipped; it's the breadth and depth of expertise I bring to every engagement.
 
 ## Breadth of expertise matters
 
